@@ -33,7 +33,7 @@
     }
     img { display: block; max-width: 100%; }
 
-    /* ─── Hex Nav ────────────────────────────────────────── */
+    /* ─── Nav ───────────────────────────────────────────── */
     .nhex {
       position: fixed;
       top: 1.75rem;
@@ -41,45 +41,44 @@
       z-index: 200;
     }
     .nhex-btn {
-      width: 46px; height: 46px;
-      background: var(--black);
-      border: none;
-      padding: 0;
+      height: 38px;
+      padding: 0 18px;
+      background: rgba(13,13,13,0.5);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(240,230,204,0.22);
+      border-radius: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      isolation: isolate;
-      /* Rounded hexagon — r=5 soft corners */
-      clip-path: path('M 5.42 9.19 L 18.58 2.31 Q 23 0 27.42 2.31 L 40.58 9.19 Q 45 11.5 45 16.5 L 45 29.5 Q 45 34.5 40.58 36.81 L 27.42 43.69 Q 23 46 18.58 43.69 L 5.42 36.81 Q 1 34.5 1 29.5 L 1 16.5 Q 1 11.5 5.42 9.19 Z');
-      transition: transform 0.35s var(--ease-out), background 0.45s ease;
+      gap: 5px;
+      transition: border-color 0.28s, transform 0.3s var(--ease-out);
     }
-    .nhex-btn:hover { transform: scale(1.08); }
+    .nhex-btn:hover { border-color: rgba(240,230,204,0.5); transform: scale(1.04); }
     .nhex-bar {
       display: block;
-      width: 14px; height: 1px;
-      background: white;
-      mix-blend-mode: difference;
-      transition: transform 0.3s var(--ease-out), background 0.45s ease;
+      width: 18px; height: 1.5px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: transform 0.3s var(--ease-out), opacity 0.2s;
     }
-    .nhex-btn.open .nhex-bar:first-child { transform: translateY(3.5px) rotate(45deg); }
-    .nhex-btn.open .nhex-bar:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
-
-    /* Light-section variant — cream hex, bars auto-adapt via mix-blend-mode */
-    .nhex--on-light .nhex-btn { background: rgba(240,230,204,0.95); }
+    .nhex-btn.open .nhex-bar:first-child { transform: translateY(3.25px) rotate(45deg); }
+    .nhex-btn.open .nhex-bar:last-child  { transform: translateY(-3.25px) rotate(-45deg); }
 
     .nhex-panel {
       position: absolute;
-      top: calc(100% + 10px);
+      top: calc(100% + 8px);
       right: 0;
-      background: var(--black);
-      border: 1px solid rgba(240,230,204,0.10);
-      display: flex;
-      flex-direction: column;
-      min-width: 78px;
+      background: rgba(13,13,13,0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(240,230,204,0.12);
+      border-radius: 16px;
+      overflow: hidden;
+      min-width: 96px;
       opacity: 0;
-      transform: translateY(-8px) scale(0.94);
+      transform: translateY(-6px) scale(0.96);
       transform-origin: top right;
       pointer-events: none;
       transition: opacity 0.22s, transform 0.28s var(--ease-out);
@@ -91,23 +90,26 @@
     }
     .nhex-item {
       display: block;
-      padding: 0.6rem 1.1rem;
-      font-family: var(--font-b);
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: lowercase;
+      padding: 0.65rem 1.3rem;
+      font-family: var(--font-d);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--cream);
       text-decoration: none;
       text-align: center;
-      transition: opacity 0.2s;
+      transition: opacity 0.18s;
     }
     .nhex-item:hover { opacity: 0.45; }
     .nhex-item--note {
-      font-size: 1.05rem;
+      font-family: var(--font-b);
+      font-size: 1rem;
+      font-weight: 400;
       letter-spacing: 0;
-      padding: 0.35rem 1.1rem 0.55rem;
-      border-top: 1px solid rgba(240,230,204,0.07);
+      text-transform: none;
+      padding: 0.45rem 1.3rem 0.6rem;
+      border-top: 1px solid rgba(240,230,204,0.08);
     }
 
     /* ─── Hero ───────────────────────────────────────────── */
@@ -238,7 +240,7 @@
     /* ─── About / Born to Play ───────────────────────────── */
     .about-driver {
       background: var(--black);
-      height: 160vh;
+      height: 240vh;
     }
     .about {
       position: sticky;
@@ -315,6 +317,15 @@
     .about-bio strong { color: rgba(240,230,204,0.72); font-weight: 400; }
 
     /* Stats */
+    .season-heading {
+      font-family: var(--font-d);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      letter-spacing: -0.01em;
+      color: var(--cream);
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+    }
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -394,11 +405,12 @@
     .quote-mark {
       display: block;
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(5rem, 9vw, 10rem);
+      font-size: clamp(7rem, 13vw, 15rem);
       line-height: 0.45;
-      color: rgba(240,230,204,0.14);
+      color: rgba(240,230,204,0.62);
       margin-bottom: 1.75rem;
       user-select: none;
+      text-shadow: 0 0 60px rgba(240,230,204,0.18);
     }
     .quote-text {
       font-family: var(--font-d);
@@ -495,21 +507,32 @@
       color: inherit;
     }
     .gt-cover {
+      position: relative;
       width: 100%;
       aspect-ratio: 1;
-      border-radius: 3px;
+      border-radius: 4px;
       overflow: hidden;
       margin-bottom: 1rem;
+      background: var(--black);
     }
-    .gt-cover-bg {
+    .gt-cover-img {
       width: 100%;
       height: 100%;
+      background-size: cover;
+      background-position: center;
       transition: transform 0.55s var(--ease-out), filter 0.55s;
     }
-    .gt-card:hover .gt-cover-bg {
-      transform: scale(1.05);
-      filter: brightness(0.85);
+    .gt-card:hover .gt-cover-img { transform: scale(1.04); filter: brightness(0.82); }
+    .gt-cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+      pointer-events: none;
     }
+    .gt-platform--am .gt-platform-dot { background: #fc3c44; }
+    .gt-platform--am { color: rgba(13,13,13,0.55); }
     .gt-name {
       display: block;
       font-family: var(--font-b);
@@ -626,8 +649,8 @@
       animation: quotePulse 5s ease-in-out infinite;
     }
     @keyframes quotePulse {
-      0%, 100% { opacity: 0.14; }
-      50%       { opacity: 0.26; }
+      0%, 100% { opacity: 0.55; }
+      50%       { opacity: 0.80; }
     }
 
     /* ─── Responsive ─────────────────────────────────────── */
@@ -639,7 +662,7 @@
 
       .about         { padding: 3rem 1.5rem; gap: 1.75rem; }
       .about-card    { width: min(60vw, 300px); }
-      .about-driver  { height: 155vh; }
+      .about-driver  { height: 220vh; }
 
       .quote-content { padding: 4rem 1.5rem; }
 
@@ -740,17 +763,18 @@
       <div class="about-foot">
         <p class="about-bio">
           Nacido para el f&uacute;tbol, Cristian Aguirre es un
-          <strong>mediocampista mexicano</strong> conocido por su
+          <strong>delantero mexicano</strong> conocido por su
           visi&oacute;n de juego, su t&eacute;cnica depurada y una mentalidad
           implacable dentro del campo. Desde sus primeras canchas
           hasta los escenarios de competencia profesional, ha
           demostrado que el f&uacute;tbol no es solo un deporte &mdash;
           es su lenguaje.
         </p>
+        <h3 class="season-heading reveal">Temporada actual</h3>
         <div class="stats">
-          <div class="stat"><div class="stat-num">47</div><div class="stat-label">Appearances</div></div>
-          <div class="stat"><div class="stat-num">12</div><div class="stat-label">Goals</div></div>
-          <div class="stat"><div class="stat-num">18</div><div class="stat-label">Assists</div></div>
+          <div class="stat"><div class="stat-num">7</div><div class="stat-label">Appearances</div></div>
+          <div class="stat"><div class="stat-num">3</div><div class="stat-label">Goals</div></div>
+          <div class="stat"><div class="stat-num">13</div><div class="stat-label">Assists</div></div>
         </div>
       </div>
 
@@ -817,28 +841,28 @@
     </div>
     <div class="gt-grid">
 
-      <a class="gt-card reveal d1" href="#" target="_blank" rel="noopener">
+      <a class="gt-card reveal d1" href="https://music.apple.com/mx/album/koko/1877481995?i=1877482633" target="_blank" rel="noopener">
         <div class="gt-cover">
-          <div class="gt-cover-bg" style="background:linear-gradient(145deg,#0c0c18 0%,#1a1a2e 45%,#0f0f23 100%)"></div>
+          <div class="gt-cover-img" style="background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/0b/13/d6/0b13d6d1-d5b9-03f4-a7b8-29f00faad00f/820200317964.jpg/600x600bb.jpg')"></div>
         </div>
-        <span class="gt-name">Pre-Match</span>
-        <span class="gt-platform"><span class="gt-platform-dot"></span>Spotify</span>
+        <span class="gt-name">Omar Courtz — KOKO</span>
+        <span class="gt-platform gt-platform--am"><span class="gt-platform-dot"></span>Apple Music</span>
       </a>
 
-      <a class="gt-card reveal d2" href="#" target="_blank" rel="noopener">
+      <a class="gt-card reveal d2" href="https://music.apple.com/mx/album/c%C3%B3mo-est%C3%A1-carnal/1721262904?i=1721263196" target="_blank" rel="noopener">
         <div class="gt-cover">
-          <div class="gt-cover-bg" style="background:linear-gradient(145deg,#180800 0%,#2e1500 45%,#1a0c00 100%)"></div>
+          <div class="gt-cover-img" style="background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/29/8b/20/298b20db-21c3-ebe1-3c2f-236aaa2ac00d/196871717748.jpg/600x600bb.jpg')"></div>
         </div>
-        <span class="gt-name">Post-Game</span>
-        <span class="gt-platform"><span class="gt-platform-dot"></span>Spotify</span>
+        <span class="gt-name">Oscar Maydón — Como Está Carnal</span>
+        <span class="gt-platform gt-platform--am"><span class="gt-platform-dot"></span>Apple Music</span>
       </a>
 
-      <a class="gt-card reveal d3" href="#" target="_blank" rel="noopener">
+      <a class="gt-card reveal d3" href="https://music.apple.com/mx/album/lady-gaga/1694412585?i=1694412892" target="_blank" rel="noopener">
         <div class="gt-cover">
-          <div class="gt-cover-bg" style="background:linear-gradient(145deg,#080f08 0%,#0d1f0d 45%,#060e06 100%)"></div>
+          <div class="gt-cover-img" style="background-image:url('https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a7/72/77/a77277f4-9b2e-0890-4707-31c1ac394c66/197189111396.jpg/600x600bb.jpg')"></div>
         </div>
-        <span class="gt-name">Road Trip</span>
-        <span class="gt-platform"><span class="gt-platform-dot"></span>Apple Music</span>
+        <span class="gt-name">Peso Pluma — LADY GAGA</span>
+        <span class="gt-platform gt-platform--am"><span class="gt-platform-dot"></span>Apple Music</span>
       </a>
 
     </div>
@@ -878,21 +902,6 @@
       });
     }
 
-    // ── Nav section-aware color ────────────────────────────
-    var nhexEl = document.getElementById('nhex');
-    if (nhexEl) {
-      var lightSections = Array.prototype.slice.call(document.querySelectorAll('.strip-section, .goat-tracks'));
-      function updateNhexColor() {
-        var vh = window.innerHeight;
-        var onLight = lightSections.some(function(s) {
-          var r = s.getBoundingClientRect();
-          return r.top < vh * 0.85 && r.bottom > vh * 0.15;
-        });
-        nhexEl.classList.toggle('nhex--on-light', onLight);
-      }
-      window.addEventListener('scroll', updateNhexColor, { passive: true });
-      updateNhexColor();
-    }
 
     // ── Custom cursor ─────────────────────────────────────
     const arrow = document.getElementById('cursorArrow');
@@ -976,24 +985,26 @@
     function runScrollScrambles() {
       var vh = window.innerHeight;
       scrollScrambles.forEach(function(item) {
-        var p;
+        var p, pReveal;
         if (aboutDriver && aboutDriver.contains(item.el)) {
           var dr = aboutDriver.getBoundingClientRect();
           var dH = aboutDriver.offsetHeight - vh;
           p = dH > 0 ? Math.max(0, Math.min(1, -dr.top / dH)) : (dr.top <= 0 ? 1 : 0);
+          pReveal = Math.min(1, p / 0.5); // text fully revealed at 50% of scroll space; rest is dwell
         } else {
           var rect = item.el.getBoundingClientRect();
           p = Math.max(0, Math.min(1, (vh - rect.top) / (vh * 0.7)));
+          pReveal = p;
         }
         item.el.style.opacity = String(Math.min(1, p / 0.18));
         item.el.style.transform = 'translateY(' + (22 * Math.max(0, 1 - p / 0.28)).toFixed(1) + 'px)';
-        if (p >= 1) {
+        if (pReveal >= 1) {
           if (!item.done) { item.el.innerHTML = item.origHTML; item.done = true; }
           return;
         }
         item.done = false;
         if (p <= 0) return;
-        var revealed = Math.floor(p * item.plain.length);
+        var revealed = Math.floor(pReveal * item.plain.length);
         var html = '';
         for (var i = 0; i < item.plain.length; i++) {
           var ch = item.plain[i];
