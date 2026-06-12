@@ -675,13 +675,33 @@
       .footer-meta   { flex-direction: column; gap: 0.5rem; align-items: center; }
     }
     @media (max-width: 480px) {
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat:last-child {
-        grid-column: span 2;
-        border-right: none;
-        border-top: 1px solid rgba(240,230,204,0.07);
-        padding-top: 1.5rem;
-      }
+      /* Hero */
+      .hero          { padding: 0 1.25rem 2.5rem; }
+      .hero-scroll   { display: none; }
+
+      /* About / Born to Play */
+      .about-driver  { height: 190vh; }
+      .about         { padding: 2.5rem 1.25rem; gap: 1.25rem; }
+      .about-card    { width: min(28vh, 190px); }
+      .about-foot    { width: 100%; }
+      .about-bio     { font-size: 0.78rem; margin-bottom: 1.25rem; }
+      .season-heading { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.6rem; }
+      .stats         { grid-template-columns: repeat(3, 1fr); }
+      .stat          { padding: 1rem 0.5rem; }
+      .stat:last-child { grid-column: auto; border-top: none; border-right: none; padding-top: 1rem; }
+      .stat-num      { font-size: 2.2rem; }
+      .stat-label    { font-size: 0.5rem; letter-spacing: 0.14em; }
+
+      /* Quote / Mentalidad */
+      .quote-mark    { font-size: clamp(3.5rem, 13vw, 8rem); }
+      .quote-text    { font-size: clamp(1.9rem, 7.8vw, 4rem); }
+      .quote-content { padding: 4rem 1.25rem; }
+
+      /* Goat Tracks */
+      .goat-tracks   { padding: 4rem 1.25rem 5rem; }
+      .gt-grid       { grid-template-columns: 1fr; max-width: 100%; gap: 2rem; }
+      .gt-header     { margin-bottom: 2rem; }
+      .gt-name       { font-size: 0.82rem; }
     }
   </style>
 </head>
