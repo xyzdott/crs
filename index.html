@@ -433,7 +433,7 @@
     /* ─── Photo Strip ────────────────────────────────────── */
     .strip-section {
       background: var(--cream);
-      padding: 4.5rem 0;
+      padding: 3rem 0;
       overflow: hidden;
     }
     .strip-header {
@@ -459,6 +459,8 @@
       gap: 0.6rem;
       width: max-content;
       animation: scrollLeft 38s linear infinite;
+      will-change: transform;
+      backface-visibility: hidden;
     }
     .strip-track:hover { animation-play-state: paused; }
     .strip-item { flex-shrink: 0; overflow: hidden; }
@@ -482,7 +484,7 @@
     /* ─── Goat Tracks ───────────────────────────────────── */
     .goat-tracks {
       background: var(--cream);
-      padding: 6.5rem 3rem 7rem;
+      padding: 3.5rem 3rem 7rem;
     }
     .gt-header {
       margin-bottom: 3.5rem;
@@ -698,7 +700,7 @@
       .quote-content { padding: 4rem 1.25rem; }
 
       /* Goat Tracks */
-      .goat-tracks   { padding: 4rem 1.25rem 5rem; }
+      .goat-tracks   { padding: 2.5rem 1.25rem 5rem; }
       .gt-grid       { grid-template-columns: 1fr; max-width: 100%; gap: 2rem; }
       .gt-header     { margin-bottom: 2rem; }
       .gt-name       { font-size: 0.82rem; }
@@ -825,31 +827,31 @@
     <div class="strip-wrapper">
       <div class="strip-track">
         <!-- set 1 -->
-        <div class="strip-item"><img src="images/04B13A25-E5B6-4CDB-9804-D293F5D68724.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/21A6FE08-6B70-4C20-AC9E-9C9D387F7A88.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/28BCDE3B-A88E-4828-B797-96637852AE1B.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/2CEDD534-EF80-42C4-B605-CCD5BEB00802.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/58818299-E255-4149-8040-2044A89CAD8B.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/611531A1-7A9B-45CD-9CFA-61FC69AA5ACF.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/69E33392-B503-417F-9613-118BB5151965.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/AA3345E7-983B-4553-8130-F59505BB5E97.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/B0B283FD-7132-46E7-926E-AE883596A868.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/FBC7F1C4-B1C9-415E-8C21-5B1CDB66F480.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/kickball.jpg"                              alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/126.jpg"                                    alt="" loading="lazy" decoding="async" height="255"></div>
+        <div class="strip-item"><img src="images/04B13A25-E5B6-4CDB-9804-D293F5D68724.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/21A6FE08-6B70-4C20-AC9E-9C9D387F7A88.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/28BCDE3B-A88E-4828-B797-96637852AE1B.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/2CEDD534-EF80-42C4-B605-CCD5BEB00802.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/58818299-E255-4149-8040-2044A89CAD8B.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/611531A1-7A9B-45CD-9CFA-61FC69AA5ACF.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/69E33392-B503-417F-9613-118BB5151965.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/AA3345E7-983B-4553-8130-F59505BB5E97.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/B0B283FD-7132-46E7-926E-AE883596A868.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/FBC7F1C4-B1C9-415E-8C21-5B1CDB66F480.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/kickball.jpg"                              alt="" height="255"></div>
+        <div class="strip-item"><img src="images/126.jpg"                                    alt="" height="255"></div>
         <!-- set 2 — duplicate for seamless loop -->
-        <div class="strip-item"><img src="images/04B13A25-E5B6-4CDB-9804-D293F5D68724.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/21A6FE08-6B70-4C20-AC9E-9C9D387F7A88.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/28BCDE3B-A88E-4828-B797-96637852AE1B.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/2CEDD534-EF80-42C4-B605-CCD5BEB00802.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/58818299-E255-4149-8040-2044A89CAD8B.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/611531A1-7A9B-45CD-9CFA-61FC69AA5ACF.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/69E33392-B503-417F-9613-118BB5151965.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/AA3345E7-983B-4553-8130-F59505BB5E97.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/B0B283FD-7132-46E7-926E-AE883596A868.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/FBC7F1C4-B1C9-415E-8C21-5B1CDB66F480.jpg" alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/kickball.jpg"                              alt="" loading="lazy" decoding="async" height="255"></div>
-        <div class="strip-item"><img src="images/126.jpg"                                    alt="" loading="lazy" decoding="async" height="255"></div>
+        <div class="strip-item"><img src="images/04B13A25-E5B6-4CDB-9804-D293F5D68724.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/21A6FE08-6B70-4C20-AC9E-9C9D387F7A88.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/28BCDE3B-A88E-4828-B797-96637852AE1B.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/2CEDD534-EF80-42C4-B605-CCD5BEB00802.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/58818299-E255-4149-8040-2044A89CAD8B.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/611531A1-7A9B-45CD-9CFA-61FC69AA5ACF.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/69E33392-B503-417F-9613-118BB5151965.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/AA3345E7-983B-4553-8130-F59505BB5E97.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/B0B283FD-7132-46E7-926E-AE883596A868.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/FBC7F1C4-B1C9-415E-8C21-5B1CDB66F480.jpg" alt="" height="255"></div>
+        <div class="strip-item"><img src="images/kickball.jpg"                              alt="" height="255"></div>
+        <div class="strip-item"><img src="images/126.jpg"                                    alt="" height="255"></div>
       </div>
     </div>
   </div>
@@ -894,7 +896,7 @@
     <div class="footer-meta">
       <span>México</span>
       <span>Futbolista Profesional</span>
-      <span>&copy; 2025</span>
+      <span>&copy; 2026</span>
     </div>
   </footer>
 
